@@ -14,7 +14,7 @@ export default class CreateExercise extends Component {
         this.state = {
             username: '',
             description: '',
-            duartion: 0,
+            duration: 0,
             date: new Date(),
             users: []
         }
@@ -49,14 +49,14 @@ export default class CreateExercise extends Component {
         const exercise = {
             username: this.state.username,
             description: this.state.description,
-            duration: this.state.duartion,
+            duration: this.state.duration,
             date: this.state.date
         }
         console.log(exercise);
 
         axios.post('http://localhost:5000/exercises/add', exercise)
             .then(res => console.log(res.data));
-        window.location = '/';
+        // window.location = '/';
     }
 
     componentDidMount() {
